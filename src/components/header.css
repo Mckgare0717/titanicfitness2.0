@@ -1,0 +1,53 @@
+.header-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #FFA500;
+    height: 98px;
+}
+
+.navbtn-cont{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    flex: 1;
+    
+    
+}
+
+button{
+    border: none;
+    font-size: 20px;
+    color: purple;
+    border-radius: 20%;
+    background: none;
+}
+
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.content-cont{
+    display: flex;
+}
+
+.titanic{
+    margin-bottom: 80px;
+    margin-left: 50px;
+    
+}
+
+.logoName{
+    display: flex;
+    font-size: 20px;
+}
+
+img{
+    padding:  30px 5px;
+    width: 80px;
+    height: 8%;
+    border-radius: 20px;
+}
