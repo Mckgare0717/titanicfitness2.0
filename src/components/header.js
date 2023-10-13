@@ -25,7 +25,7 @@ const Header =()=>{
                 <NavButton text="Home" path="/"/>
                 <NavButton text="Blog" path="/blog"/>
                 <NavButton text="About" path="/about"/>
-                <NavButton text="Login" path="/login"/>
+                <NavButton text="Login/Register" path="/login"/>
                 <NavButton text="Profile" path="/profile"/>
             </div>
         </div>

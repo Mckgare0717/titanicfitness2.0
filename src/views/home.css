@@ -1,0 +1,7 @@
+.pic1 {
+    width: 2030px;
+    height: 800px;
+    flex-shrink: 0;
+    background: cover no-repeat;
+    gap: 0px;
+}
