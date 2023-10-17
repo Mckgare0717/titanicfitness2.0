@@ -32,3 +32,9 @@
     width: 20%;
     border-radius: 30px;
 }
+
+.fewvideos{
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+}

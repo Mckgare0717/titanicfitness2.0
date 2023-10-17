@@ -1,3 +1,18 @@
 .content-cont{
-
+    background-color: #FFA500;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    max-width: 50%;
+    align-items: center;
+    margin-top: 10px;
+    
+    
+    
 }
+
+.content-cont img{
+    width: 200px;
+    max-height: 50%;
+}
+

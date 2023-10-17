@@ -14,7 +14,7 @@ const Header =()=>{
     return(
         <header>
         <div className="header-cont">
-            <div className="content-cont">
+            <div className="content-cont1">
                 <img src={logo}/>
                 <div className="logoName">
                 <h2 className="titanic">Titanic</h2>
