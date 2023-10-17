@@ -3,12 +3,12 @@ import "./footer.css"
 const Footer =()=>{
     return(
         <div className="siteMap">
-            <li className="map1">
-                <ul><a href="#">Careers</a></ul>
-                <ul><a href="#">About Us</a></ul>
-                <ul><a href="#">Locations</a></ul>
-                <ul><a href="#">Social media</a></ul>
-            </li>
+            <ul className="map1">
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Social media</a></li>
+            </ul>
 
         </div>
     )

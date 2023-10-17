@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     background-color: #FFA500;
-    height: 98px;
+    
 }
 
 .navbtn-cont{
@@ -50,8 +50,8 @@ h2{
     display: flex;
     font-size: 30px;
     align-items: center;
-    position: absolute;
-    left: 40%;
+    position: absolute; 
+     left: 40%;
     font-family:Georgia, 'Times New Roman', Times, serif ;
     transition: all 0.3s ease-in-out;
 }
@@ -65,4 +65,20 @@ img{
 
 .logoName:hover{
     transform: scale(1.1);
+}
+
+@media (max-width:1357px){
+    .header-cont{
+        border: 1px solid red;
+        display: flex;
+      flex-direction: column;
+    }
+
+    .navbtn-cont{
+        
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
 }

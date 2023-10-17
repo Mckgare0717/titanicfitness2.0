@@ -1,4 +1,12 @@
 .map1{
     background-color: #FFA500;
     margin-top: 30px;
+    list-style-type: none;
+    padding: 20px;
+    
+}
+
+ul{
+    margin-top: 50%;
+
 }
