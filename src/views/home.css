@@ -36,5 +36,8 @@
 .fewvideos{
     display: flex;
     padding: 20px;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    flex-wrap: wrap;
 }

@@ -32,9 +32,19 @@ const Home = ()=>{
                 name="john doe"
                 image={pic3}/>
             </div>
+            <h1>Workouts:</h1>
             <div className="fewvideos">
                 <Health image={pic4} link="https://www.youtube.com/watch?v=JyV7mUFSpXs" descp="10 MINUTE LIGHTWEIGHT DUMBBELL BICEP & FOREARM WORKOUT!"/>
                 <Health image={pic5} link="https://www.youtube.com/watch?v=j6UyNq_TwGA" descp="Full Body Workout at GYM - 15 Exercises for Total Body mass!"/>
+                <Health image={pic5} link="https://www.youtube.com/watch?v=j6UyNq_TwGA" descp="Full Body Workout at GYM - 15 Exercises for Total Body mass!"/>
+                <Health image={pic5} link="https://www.youtube.com/watch?v=j6UyNq_TwGA" descp="Full Body Workout at GYM - 15 Exercises for Total Body mass!"/>
+                <Health image={pic5} link="https://www.youtube.com/watch?v=j6UyNq_TwGA" descp="Full Body Workout at GYM - 15 Exercises for Total Body mass!"/>
+                <Health image={pic5} link="https://www.youtube.com/watch?v=j6UyNq_TwGA" descp="Full Body Workout at GYM - 15 Exercises for Total Body mass!"/>
+                <Health image={pic5} link="https://www.youtube.com/watch?v=j6UyNq_TwGA" descp="Full Body Workout at GYM - 15 Exercises for Total Body mass!"/>
+                <Health image={pic5} link="https://www.youtube.com/watch?v=j6UyNq_TwGA" descp="Full Body Workout at GYM - 15 Exercises for Total Body mass!"/>
+                <Health image={pic5} link="https://www.youtube.com/watch?v=j6UyNq_TwGA" descp="Full Body Workout at GYM - 15 Exercises for Total Body mass!"/>
+                <Health image={pic5} link="https://www.youtube.com/watch?v=j6UyNq_TwGA" descp="Full Body Workout at GYM - 15 Exercises for Total Body mass!"/>
+                
             </div>
         </div>
     )

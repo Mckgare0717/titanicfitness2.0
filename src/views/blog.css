@@ -1,0 +1,18 @@
+.blog-cont{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    flex-wrap: wrap;
+    
+}
+
+.blog {
+    display: flex;
+    flex-direction:row;
+    background-color: #FFA500;
+    width: 20%;
+    border-radius: 30px;
+    margin: 20px auto;
+}
