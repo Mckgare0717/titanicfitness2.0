@@ -7,6 +7,7 @@ import Blog from './views/blog';
 import About from './views/about';
 import Profile from './views/profile';
 import Header from './components/header';
+import Footer from './components/footer';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route exact path='/about' element={<About/>}/>
         <Route exact path='/profile' element={isLoggedIn ? <Profile/> : <Navigate to={"/login"}/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

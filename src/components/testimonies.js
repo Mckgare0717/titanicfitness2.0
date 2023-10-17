@@ -7,9 +7,12 @@ const Testimonies =({testimony,name,image})=>{
             <img src={image} alt={name}/>
             </div>
             <div className="text-cont">
-            <p>{testimony}</p>
+            <p>"{testimony}"</p>
+            <h3>{name}</h3>
             </div>
         </div>
     )
 
 }
+
+export default Testimonies;

@@ -1,3 +1,9 @@
+.loginForm-cont{
+    border: 1px solid red;
+    /* display: flex;
+    flex-direction: column; */
+    flex: 1;
+}
 .loginForm{
     background-color: #FFA500;
     margin-top: 80px;

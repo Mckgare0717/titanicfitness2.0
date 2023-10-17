@@ -19,5 +19,16 @@
 .testimonies{
     background-image: url(../assests/bodypic2.png) ;
     background-blend-mode: lighten;
+    display: flex;
+    justify-content: flex-end;
+    flex:1;
+    gap: 10px;
+    
 
+}
+
+.bodyContent h1{
+    background-color: #FFA500;
+    width: 20%;
+    border-radius: 30px;
 }
