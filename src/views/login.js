@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./login.css";
+import RegisterForm from "../forms/RegisterForm";
+import LoginForm from "../forms/LoginForm";
 
 const Login = () => {
 
@@ -16,32 +18,48 @@ const Login = () => {
         }
     }
 
-    return (
-        <div className="loginForm-cont">
-            <form className="loginForm">
-                <h2>{formState.toUpperCase()}</h2>
+    if (formState=="login"){
+        return(
+            <div className="loginForm-cont">
+            
+            <LoginForm changeForm={modeSwitch}/>
+            </div>
+        )
+    }else{
+        return(
+            <div className="loginForm-cont">
+                
+                <RegisterForm changeForm={modeSwitch}/>
+            </div>
+        )
+    }
 
-                {
-                    formState == "login" ?
-                        <p>Don't have an account?<span onClick={modeSwitch} className="formSwitch"> Register</span></p>
-                        : <p>Already have an account?<span onClick={modeSwitch} className="formSwitch"> Login</span></p>
-                }
+    // return (
+    //     <div className="loginForm-cont">
+    //         <form className="loginForm">
+    //             <h2>{formState.toUpperCase()}</h2>
 
-                {
-                    formState == "register" ? <>
-                        <h3>Enter Name</h3>
-                        <input type="text" placeholder="Name" value={displayName} required onChange={(e) => setDisplayName(e.target.value)} />
-                    </> : null
-                }
+    //             {
+    //                 formState == "login" ?
+    //                     <p>Don't have an account?<span onClick={modeSwitch} className="formSwitch"> Register</span></p>
+    //                     : <p>Already have an account?<span onClick={modeSwitch} className="formSwitch"> Login</span></p>
+    //             }
 
-                <h3>Enter Email</h3>
-                <input type="text" placeholder="Name" value={email} required onChange={(e) => setEmail(e.target.value)} />
-                <h3>Enter Password</h3>
-                <input type="text" placeholder="Name" value={password} required onChange={(e) => setPassword(e.target.value)} />
-                <button className="submitbtn">Submit</button>
-            </form>
-        </div>
-    )
+    //             {
+    //                 formState == "register" ? <>
+    //                     <h3>Enter Name</h3>
+    //                     <input type="text" placeholder="Name" value={displayName} required onChange={(e) => setDisplayName(e.target.value)} />
+    //                 </> : null
+    //             }
+
+    //             <h3>Enter Email</h3>
+    //             <input type="text" placeholder="Name" value={email} required onChange={(e) => setEmail(e.target.value)} />
+    //             <h3>Enter Password</h3>
+    //             <input type="text" placeholder="Name" value={password} required onChange={(e) => setPassword(e.target.value)} />
+    //             <button className="submitbtn">Submit</button>
+    //         </form>
+    //     </div>
+    // )
 }
 
 export default Login;
