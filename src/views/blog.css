@@ -5,6 +5,7 @@
     align-items: flex-start;
     gap: 32px;
     flex-wrap: wrap;
+   
     
 }
 
@@ -23,10 +24,28 @@
     flex-direction: column;
     margin-bottom: 20px;
     padding: 20px;
+    align-items: center;
+    border-radius: 50px;
+    width: 50%;
 }
 
 .cust-cont button{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 20px;
+    
+}
+
+.cust-cont form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-pg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

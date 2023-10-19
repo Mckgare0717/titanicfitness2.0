@@ -8,7 +8,7 @@ const Blog = ()=>{
     const [workout,setWorkout] = useState(null)
 
     return(
-        <>
+        <div className="blog-pg">
         <h2 className="blog">Blogs</h2>
         <div className="blogpg-cont">
                 
@@ -36,7 +36,7 @@ const Blog = ()=>{
                 <button type="submit">Get my workout</button>
             </form>
         </div>
-        </>
+        </div>
     )
 }
 
