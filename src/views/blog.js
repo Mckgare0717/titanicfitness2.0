@@ -2,21 +2,21 @@ import "./blog.css";
 import Health from "../components/health.js"
 import pic1 from "../assests/balls.jpg"
 import Workoutsdisp from "../components/Workoutsdisp.js"
-import { axios } from "axios";
+import axios  from "axios";
 import { useEffect, useState } from "react";
 
 const Blog = ()=>{
     const [weight,setWeight] = useState(null)
     const [workout,setWorkout] = useState(null)
     const [shwWorkout,setshwWorkout] = useState(false)
-    const [dispWorkouts,setdispWorkouts] = useState({})
+    const [dispWorkouts,setdispWorkouts] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
         var muscle = "biceps"
           try {
             const result = await axios.get('https://api.api-ninjas.com/v1/exercises?muscle=' + muscle, 
-             { headers: { 'api-key': 'fpP6jDAx5Iapte7szbe3jQ==EZvtpDsJq6LWfJGQ' },}
+             { headers: { 'X-Api-Key': 'fpP6jDAx5Iapte7szbe3jQ==EZvtpDsJq6LWfJGQ' },}
             );
             setdispWorkouts(result.data);
           } catch (error) {
@@ -46,7 +46,7 @@ const Blog = ()=>{
             <h2>Customise your workout plan as per your needs</h2>
             <form>
                 <h2>Enter Weight</h2>
-                <input type="text"  placeholder="Enter Weight" value={weight} required onChange={(e) => setWeight(e.target.value)}/>
+                <input type="text"  placeholder="Enter Weight in kg" value={weight} required onChange={(e) => setWeight(e.target.value)}/>
                 <h2>Choose your workout</h2>
                 <select id="workouts" name="workouts" value={workout} required onChange={(e) => setWorkout(e.target.value)}>
                     <option value="weightLoose">Weight Loose</option>
@@ -66,9 +66,11 @@ const Blog = ()=>{
                         {workout.difficulty}
                         <a>{workout.instructions}</a>
                     </li>
+                    console.log(workout)
+
                 })}
             </ul>
-        <Workoutsdisp name="bicep" desc="fefnefubfeufbiefhnewifhiwehfiuwebf" link="" vidname="bicep prep"/>
+        {/* // <Workoutsdisp name="bicep" desc="fefnefubfeufbiefhnewifhiwehfiuwebf" link="" vidname="bicep prep"/> */}
         </div>
         </div>
     )
