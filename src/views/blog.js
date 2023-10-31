@@ -1,6 +1,7 @@
 import "./blog.css";
 import Health from "../components/health.js"
 import pic1 from "../assests/balls.jpg"
+import Workoutsdisp from "../components/Workoutsdisp.js"
 import { useState } from "react";
 
 const Blog = ()=>{
@@ -34,6 +35,9 @@ const Blog = ()=>{
                     <option value="biceps">Biceps</option>
                 </select>
                 <button type="submit">Get my workout</button>
+                <Workoutsdisp name="bicep" desc="fefnefubfeufbiefhnewifhiwehfiuwebf" link="" vidname="bicep prep"/>
+
+
             </form>
         </div>
         </div>
