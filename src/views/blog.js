@@ -2,11 +2,30 @@ import "./blog.css";
 import Health from "../components/health.js"
 import pic1 from "../assests/balls.jpg"
 import Workoutsdisp from "../components/Workoutsdisp.js"
-import { useState } from "react";
+import { axios } from "axios";
+import { useEffect, useState } from "react";
 
 const Blog = ()=>{
     const [weight,setWeight] = useState(null)
     const [workout,setWorkout] = useState(null)
+    const [shwWorkout,setshwWorkout] = useState(false)
+    const [dispWorkouts,setdispWorkouts] = useState({})
+
+    useEffect(() => {
+        const fetchData = async () => {
+        var muscle = "biceps"
+          try {
+            const result = await axios.get('https://api.api-ninjas.com/v1/exercises?muscle=' + muscle, 
+             { headers: { 'api-key': 'fpP6jDAx5Iapte7szbe3jQ==EZvtpDsJq6LWfJGQ' },}
+            );
+            setdispWorkouts(result.data);
+          } catch (error) {
+            console.error('Error fetching data: ', error);
+          }
+        };
+    
+        fetchData();
+     }, []);
 
     return(
         <div className="blog-pg">
@@ -35,10 +54,21 @@ const Blog = ()=>{
                     <option value="biceps">Biceps</option>
                 </select>
                 <button type="submit">Get my workout</button>
-                <Workoutsdisp name="bicep" desc="fefnefubfeufbiefhnewifhiwehfiuwebf" link="" vidname="bicep prep"/>
-
-
             </form>
+            
+        </div>
+        <div className="dispWorkout">
+            <ul>
+                {dispWorkouts.map(workout=>{
+                    <li>
+                        {workout.type}-
+                        {workout.equipment}
+                        {workout.difficulty}
+                        <a>{workout.instructions}</a>
+                    </li>
+                })}
+            </ul>
+        <Workoutsdisp name="bicep" desc="fefnefubfeufbiefhnewifhiwehfiuwebf" link="" vidname="bicep prep"/>
         </div>
         </div>
     )
