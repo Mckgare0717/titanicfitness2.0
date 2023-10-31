@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const Blog = ()=>{
     const [weight,setWeight] = useState(null)
-    const [workout,setWorkout] = useState("")
+    const [workout,setWorkout] = useState(null)
     const [shwWorkout,setshwWorkout] = useState(false)
     const [dispWorkouts,setdispWorkouts] = useState([])
 
@@ -36,11 +36,11 @@ const Blog = ()=>{
         fetchData();
      }, []);
 
-    //  function getOption() {
-    //     var selectElement = document.querySelector("#workout");
-    //     var output = selectElement.value;
-    //     document.querySelector('.output').textContent = output;
-    // }
+     function getOption() {
+        var selectElement = document.querySelector("#workout");
+        var output = selectElement.value;
+        document.querySelector('.output').textContent = output;
+    }
 
     return(
         <div className="blog-pg">
@@ -67,7 +67,7 @@ const Blog = ()=>{
                     <option value="chest">Chest</option>
                     <option value="triceps">Triceps</option>
                 </select>
-                <button  type="submit">Get my workout</button>
+                <button onClick={getOption()} type="submit">Get my workout</button>
             </form>
             
         </div>
