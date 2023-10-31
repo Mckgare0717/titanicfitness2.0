@@ -11,19 +11,28 @@ const Blog = ()=>{
     const [shwWorkout,setshwWorkout] = useState(false)
     const [dispWorkouts,setdispWorkouts] = useState([])
 
-    useEffect(() => {
-        const fetchData = async () => {
+    const fetchData = async () => {
         var muscle = "biceps"
           try {
             const result = await axios.get('https://api.api-ninjas.com/v1/exercises?muscle=' + muscle, 
-             { headers: { 'X-Api-Key': 'fpP6jDAx5Iapte7szbe3jQ==EZvtpDsJq6LWfJGQ' },}
-            );
-            setdispWorkouts(result.data);
-          } catch (error) {
-            console.error('Error fetching data: ', error);
+             { headers: { 'X-Api-Key': 'fpP6jDAx5Iapte7szbe3jQ==EZvtpDsJq6LWfJGQ' } })
+             .then((result) => {
+                setdispWorkouts(result.data);
+            })        
+            .catch((error) => {
+                console.error('Error fetching data: ', error);
+            })
+            
           }
-        };
+          catch(e){
+            console.log("exception")
+          }
+        }
+
+
+    useEffect(() => {
     
+
         fetchData();
      }, []);
 
