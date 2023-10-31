@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const Blog = ()=>{
     const [weight,setWeight] = useState(null)
-    const [workout,setWorkout] = useState(null)
+    const [workout,setWorkout] = useState("")
     const [shwWorkout,setshwWorkout] = useState(false)
     const [dispWorkouts,setdispWorkouts] = useState([])
 
@@ -27,6 +27,12 @@ const Blog = ()=>{
         fetchData();
      }, []);
 
+    //  function getOption() {
+    //     var selectElement = document.querySelector("#workout");
+    //     var output = selectElement.value;
+    //     document.querySelector('.output').textContent = output;
+    // }
+
     return(
         <div className="blog-pg">
         <h2 className="blog">Blogs</h2>
@@ -45,26 +51,25 @@ const Blog = ()=>{
         <div className="cust-cont">
             <h2>Customise your workout plan as per your needs</h2>
             <form>
-                <h2>Enter Weight</h2>
-                <input type="text"  placeholder="Enter Weight in kg" value={weight} required onChange={(e) => setWeight(e.target.value)}/>
                 <h2>Choose your workout</h2>
-                <select id="workouts" name="workouts" value={workout} required onChange={(e) => setWorkout(e.target.value)}>
-                    <option value="weightLoose">Weight Loose</option>
-                    <option value="weightGain">Weight Gain</option>
+                <select id="workouts" name="workouts" placeholder="Choose Workout" value={workout} required onChange={(e) => setWorkout(e.target.value)}>
                     <option value="biceps">Biceps</option>
+                    <option value="forearms">Forearms</option>
+                    <option value="chest">Chest</option>
+                    <option value="triceps">Triceps</option>
                 </select>
-                <button type="submit">Get my workout</button>
+                <button  type="submit">Get my workout</button>
             </form>
             
         </div>
         <div className="dispWorkout">
             <ul>
-                {dispWorkouts.map(workout=>{
+                {dispWorkouts.map(workouts=>{
                     <li>
-                        {workout.type}-
-                        {workout.equipment}
-                        {workout.difficulty}
-                        <a>{workout.instructions}</a>
+                        {workouts.type}-
+                        {workouts.equipment}
+                        {workouts.difficulty}
+                        <a>{workouts.instructions}</a>
                     </li>
                     console.log(workout)
 
