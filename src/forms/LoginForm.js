@@ -23,11 +23,10 @@ const LoginForm = ({ changeForm }) => {
         }
 
         axios.post("http://localhost:8000/login", postData).then((res) => {
-            setUser(res.data.user)
-            setToken(res.data.token)
-
-            localStorage.setItem("token", res.data.token)
-            localStorage.setItem("user", JSON.stringify(res.data.user))
+            setUser(res.data.display_name)
+            setToken(res.data.access_token)
+            localStorage.setItem("token", res.data.access_token)
+            localStorage.setItem("user", res.data.display_name)
             setError(null)
             navigate("/profile")
 
@@ -45,9 +44,9 @@ const LoginForm = ({ changeForm }) => {
             <h2>Login</h2>
             <p>Don't have an account? <span onClick={changeForm} className="form-switch-button">Register</span></p>
             <h3>Enter Email</h3>
-            <input type="text" placeholder="Name" value={email} required onChange={(e) => setEmail(e.target.value)} />
+            <input type="text" placeholder="Email" value={email} required onChange={(e) => setEmail(e.target.value)} />
             <h3>Enter Password</h3>
-            <input type="text" placeholder="Name" value={password} required onChange={(e) => setPassword(e.target.value)} />
+            <input type="text" placeholder="password" value={password} required onChange={(e) => setPassword(e.target.value)} />
             <button className="submitbtn">Submit</button>
         </form>
     )

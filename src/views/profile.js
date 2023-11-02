@@ -1,17 +1,20 @@
 import "./profile.css";
 import pic1 from "../assests/avatar.jpg"
 import { useNavigate } from "react-router-dom";
+import {AuthContext} from "../components/ActionContext.js"
+import { useContext } from "react";
 
 const Profile = ()=>{
     var progressBar = 50
     const navigate = useNavigate()
+    const {user} = useContext(AuthContext)
 
     return(
         <div className="profile-cont">
         <div className="profile-pla">
             <img src={pic1} alt="profileimage"/>
-            <h2>Babu Grow</h2>
-            <h2>Email:babugrow@titanicfit.org.uk</h2>  
+            <h2>{user}</h2>
+            <h2>Email:{user}@titanicfit.org.uk</h2>  
             <button onClick={()=>navigate("/blog")}>Start Workout</button>
         </div>
 
