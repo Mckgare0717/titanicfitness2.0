@@ -13,7 +13,18 @@ const RegisterForm = ({ changeForm }) => {
             age,
         };
         alert("trying to register in");
-        //here I'm going to send the date to the backend login user api endpoint
+        axios.post("http://localhost:8000/register", postData).then((res) => {
+            setUser(res.data.display_name)
+            setToken(res.data.access_token)
+            localStorage.setItem("token", res.data.access_token)
+            localStorage.setItem("user", res.data.display_name)
+            setError(null)
+            navigate("/profile")
+
+        }, (error) => {
+            alert(error)
+        })
+
     };
 
     return (
