@@ -22,7 +22,7 @@ const LoginForm = ({ changeForm }) => {
             password
         }
 
-        axios.post("https://localhost:8000/users/login", postData).then((res) => {
+        axios.post("http://localhost:8000/login", postData).then((res) => {
             setUser(res.data.user)
             setToken(res.data.token)
 
