@@ -1,0 +1,32 @@
+.profile-pla{
+    background-color: #FFA500;
+    margin-top: 20px;
+    width: 30%;
+    border-radius: 30px;
+    margin-left: 30%;
+    padding: 30px;
+    
+    
+}
+
+.progress-cont{
+    background-color: #FFA500;
+    width: 30%;
+    margin-top: 30px;
+    margin-left: 30%;
+    padding: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+
+
+.profile-cont progress{
+    background-color: black;
+}
+
+.profile-cont{
+    flex: 1;
+}

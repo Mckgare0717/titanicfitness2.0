@@ -1,3 +1,4 @@
+
 .header-cont{
     display: flex;
     flex-direction: row;
@@ -38,6 +39,7 @@ h2{
 
 .content-cont1{
     display: flex;
+    width: 100%
 }
 
 .titanic{
@@ -50,8 +52,11 @@ h2{
     display: flex;
     font-size: 30px;
     align-items: center;
-    position: absolute; 
-     left: 40%;
+    width: 100%;
+    /* position: absolute;  */
+     /* left: 40%; */
+    flex: 1;
+    justify-content: center;
     font-family:Georgia, 'Times New Roman', Times, serif ;
     transition: all 0.3s ease-in-out;
 }
@@ -69,7 +74,7 @@ img{
 
 @media (max-width:1357px){
     .header-cont{
-        border: 1px solid red;
+        
         display: flex;
       flex-direction: column;
     }
