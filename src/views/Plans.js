@@ -2,6 +2,8 @@
 import { useState } from "react";
 import "./plans.css"
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../components/ActionContext";
 
 
 const Plans = () => {
@@ -10,7 +12,9 @@ const Plans = () => {
   const handlePlanChange = (plan) => {
     setSelectedPlan(plan);
   };
+  const {token} = useContext(AuthContext)
 
+  
 
   const navigate =useNavigate()
   return (
@@ -55,8 +59,10 @@ const Plans = () => {
         {selectedPlan === "premium" && (
           <p>You have selected the Premium Plan for £50/month.</p>
         )}
-
-        <button onClick={()=>navigate("/login")}>Join Now</button>
+        {
+            {token} == true?<button onClick={()=>navigate("/login")}>Join Now</button>:<button onClick={()=>navigate("/blog")}>Start Now</button>
+        }
+        
       </div>
     </div>
   );

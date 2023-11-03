@@ -6,6 +6,7 @@ const RegisterForm = ({ changeForm }) => {
     const [email, setEmail] = useState("");
     const [displayName, setDisplayName] = useState("");
     const [password, setPassword] = useState("");
+    const [registered,setregistered] = useState(false)
     const [age,setAge] = useState("")
     const navigate = useNavigate()
 
@@ -16,7 +17,7 @@ const RegisterForm = ({ changeForm }) => {
         e.preventDefault()
         const postData = {
             email,
-            displayName,
+            display_name : displayName,
             password,
             age,
         };
@@ -27,11 +28,15 @@ const RegisterForm = ({ changeForm }) => {
             localStorage.setItem("token", res.data.access_token)
             localStorage.setItem("user", res.data.display_name)
             setError(null)
+            
             navigate("/plans")
 
         }, (error) => {
             alert(error)
+            registered = false
         })
+
+        
 
     };
 
