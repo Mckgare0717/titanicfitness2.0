@@ -8,6 +8,7 @@ import About from './views/about';
 import Profile from './views/profile';
 import Header from './components/header';
 import Footer from './components/footer';
+import Plans from './views/Plans';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/login' element={<Login/>}/>
         <Route exact path='/blog' element={<Blog/>}/>
         <Route exact path='/about' element={<About/>}/>
+        <Route exact path='/plans' element={<Plans/>}/>
         <Route exact path='/profile' element={isLoggedIn ? <Profile/> : <Navigate to={"/login"}/>} />
       </Routes>
       <Footer/>

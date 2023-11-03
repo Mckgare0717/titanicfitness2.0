@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
+import axios from "axios";
+import { AuthContext } from "../components/ActionContext";
+import { useNavigate } from "react-router-dom";
 const RegisterForm = ({ changeForm }) => {
     const [email, setEmail] = useState("");
     const [displayName, setDisplayName] = useState("");
     const [password, setPassword] = useState("");
     const [age,setAge] = useState("")
+    const navigate = useNavigate()
 
-    const register = () => {
+    const { setToken, setUser } = useContext(AuthContext);
+    const [error, setError] = useState(null);
+
+    const register = (e) => {
+        e.preventDefault()
         const postData = {
             email,
             displayName,
@@ -19,7 +27,7 @@ const RegisterForm = ({ changeForm }) => {
             localStorage.setItem("token", res.data.access_token)
             localStorage.setItem("user", res.data.display_name)
             setError(null)
-            navigate("/profile")
+            navigate("/plans")
 
         }, (error) => {
             alert(error)

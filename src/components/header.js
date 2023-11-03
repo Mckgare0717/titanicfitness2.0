@@ -24,6 +24,7 @@ const Header =()=>{
             <div className="navbtn-cont">
                 <NavButton text="Home" path="/"/>
                 <NavButton text="Blog" path="/blog"/>
+                <NavButton text="Plans" path="/plans"/>
                 <NavButton text="About" path="/about"/>
                 <NavButton text="Login/Register" path="/login"/>
                 <NavButton text="Profile" path="/profile"/>
