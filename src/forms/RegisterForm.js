@@ -6,7 +6,7 @@ const RegisterForm = ({ changeForm }) => {
     const [email, setEmail] = useState("");
     const [displayName, setDisplayName] = useState("");
     const [password, setPassword] = useState("");
-    const [registered,setregistered] = useState(false)
+    
     const [age,setAge] = useState("")
     const navigate = useNavigate()
 
@@ -33,7 +33,7 @@ const RegisterForm = ({ changeForm }) => {
 
         }, (error) => {
             alert(error)
-            registered = false
+            
         })
 
         
