@@ -4,12 +4,15 @@ import pic1 from "../assests/balls.jpg"
 import Workoutsdisp from "../components/Workoutsdisp.js"
 import axios  from "axios";
 import { useEffect, useState } from "react";
+import { AuthContext } from "../components/ActionContext.js";
+import { useContext } from "react";
 
 const Blog = ()=>{
     const [weight,setWeight] = useState(null)
     const [workout,setWorkout] = useState("choose")
     const [shwWorkout,setshwWorkout] = useState(false)
     const [dispWorkouts,setdispWorkouts] = useState([])
+    const  {token} = useContext(AuthContext)
 
     const fetchData = async (muscle) => {
         console.log("fetching")
@@ -81,21 +84,26 @@ const Blog = ()=>{
             </form>
             
         </div>
-        <div className="dispWorkout">
+        {
+            token !== null &&<div className="dispWorkout">
             <ul>
                 {dispWorkouts.map(workouts=>{
-                    return <li>
+                    return <li key={workouts.name}>
+                    <button className="addBtn">+</button>
                         <h3>Workout type</h3>{workouts.type}-
                         <h3>Equipment required</h3>{workouts.equipment}
                         <h3>Workout difficulty</h3>{workouts.difficulty}-
                         <h3>instructions</h3><a>{workouts.instructions}</a>
+                        
                     </li>
-                    console.log(workout)
+                    
 
                 })}
             </ul>
-        {/* // <Workoutsdisp name="bicep" desc="fefnefubfeufbiefhnewifhiwehfiuwebf" link="" vidname="bicep prep"/> */}
+        
         </div>
+        }:null
+        
         </div>
     )
 }

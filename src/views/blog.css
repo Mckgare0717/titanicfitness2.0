@@ -67,3 +67,11 @@
 .dispWorkout ul{
     list-style-type: none;
 }
+
+.addBtn{
+    background-color:#4C194C ;
+    color:#FFA500 ;
+    font-size: large;
+    padding: 10px;
+    margin-left: 95%;
+}

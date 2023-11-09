@@ -27,7 +27,7 @@ const LogoutBtn =()=>{
 
     if(token){
         return(
-            <button className="logout-btn" onClick={()=>logout}>Logout</button>
+            <button className="logout-btn" onClick={logout}>Logout</button>
         )
     }
 }
@@ -38,7 +38,10 @@ const ProfileBtn = ()=>{
 
     if (user){
         return (
-            <button className="profile-btn" onClick={()=>navigate("/profile")}>{user.display_name[0].toUpperCase()}</button>
+            <button className="profile-btn" onClick={()=>navigate("/profile")}>
+            {user[0].toUpperCase()}
+            {/* {JSON.stringify(user)} */}
+            </button>
         )
     }
 
@@ -46,7 +49,7 @@ const ProfileBtn = ()=>{
 }
 
 const Header =()=>{
-    
+    const  {token} = useContext(AuthContext)
     
 
     return(
@@ -64,9 +67,10 @@ const Header =()=>{
                 <NavButton text="Blog" path="/blog"/>
                 <NavButton text="Plans" path="/plans"/>
                 <NavButton text="About" path="/about"/>
-                <NavButton text="Login/Register" path="/login"/>
-                <ProfileBtn/>
+                {token === null && <NavButton text="Login/Register" path="/login"/>}
                 <LogoutBtn/>
+                <ProfileBtn/>
+                
                 
                 
             </div>
