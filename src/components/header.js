@@ -1,6 +1,8 @@
 import "./header.css"
-import { Navigate, useNavigate } from "react-router-dom"
+import {  useNavigate } from "react-router-dom"
 import logo from "../assests/logo.PNG"
+import { AuthContext } from "./ActionContext"
+import { useContext } from "react"
 
 const NavButton = ({text,path}) =>{
     const navigate =useNavigate()
@@ -10,7 +12,43 @@ const NavButton = ({text,path}) =>{
         </button>
     )
 }
+
+const LogoutBtn =()=>{
+    const {token,setToken,setUser} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    function  logout(){
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        setToken(null)
+        setUser(null)
+        navigate("/")
+    }
+
+    if(token){
+        return(
+            <button className="logout-btn" onClick={()=>logout}>Logout</button>
+        )
+    }
+}
+
+const ProfileBtn = ()=>{
+    const {user} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    if (user){
+        return (
+            <button className="profile-btn" onClick={()=>navigate("/profile")}>{user.display_name[0].toUpperCase()}</button>
+        )
+    }
+
+
+}
+
 const Header =()=>{
+    
+    
+
     return(
         <header>
         <div className="header-cont">
@@ -27,7 +65,10 @@ const Header =()=>{
                 <NavButton text="Plans" path="/plans"/>
                 <NavButton text="About" path="/about"/>
                 <NavButton text="Login/Register" path="/login"/>
-                <NavButton text="Profile" path="/profile"/>
+                <ProfileBtn/>
+                <LogoutBtn/>
+                
+                
             </div>
         </div>
         </header>
