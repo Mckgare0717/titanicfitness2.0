@@ -21,7 +21,7 @@ const RegisterForm = ({ changeForm }) => {
             password,
             age,
         };
-        alert("trying to register in");
+        
         axios.post("http://localhost:8000/register", postData).then((res) => {
             setUser(res.data.display_name)
             setToken(res.data.access_token)
