@@ -32,7 +32,7 @@ const LoginForm = ({ changeForm }) => {
             navigate("/profile")
 
         }, (error) => {
-            alert(error)
+            alert(error.response.data.detail)
         })
 
 

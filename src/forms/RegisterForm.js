@@ -32,11 +32,9 @@ const RegisterForm = ({ changeForm }) => {
             navigate("/plans")
 
         }, (error) => {
-            alert(error)
+            alert(error.response.data.detail)
             
         })
-
-        
 
     };
 
