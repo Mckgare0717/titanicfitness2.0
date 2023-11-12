@@ -8,11 +8,15 @@ import { AuthContext } from "../components/ActionContext.js";
 import { useContext } from "react";
 
 const Blog = () => {
-    const [weight, setWeight] = useState(null)
     const [workout, setWorkout] = useState("choose")
-    const [shwWorkout, setshwWorkout] = useState(false)
     const [dispWorkouts, setdispWorkouts] = useState([])
     const { token } = useContext(AuthContext)
+    const [name,setName]  = useState("")
+    const [type,setType]  = useState("")
+    const [difficulty,setDifficulty]  = useState("")
+    const [equipment,setEquipment]  = useState("")
+    const [inst,setInst]  = useState("")
+    const [error, setError] = useState(null);
 
     const fetchData = async (muscle) => {
         console.log("fetching")
@@ -35,19 +39,27 @@ const Blog = () => {
     }
 
     //this is to add the workouts to the users database
-    // const findData =(id)=>{
-    //     const selectedData = dispWorkouts.find((workouts)=>workouts.name===id)
-    //     const exercData ={
-    //         name,
-    //         type,
-    //         equipment,
-    //         difficulty,
-    //         instructions
-    //     }
-    //     if (selectedData){
-    //             axios.post("http://localhost:8000/",exercData)
-    //     }
-    // }
+    const findData =(wrkName)=>{
+        const selectedData = dispWorkouts.find((workouts)=>workouts.name===wrkName)
+        console.log(selectedData)
+        const exercData ={
+            access_token:token,
+            name:selectedData.name,
+            type:selectedData.type,
+            equipment:selectedData.equipment,
+            difficulty:selectedData.difficulty,
+            inst:selectedData.instructions
+        }
+        console.log(exercData)
+        axios.post("http://localhost:8000/workouts",exercData).then((res)=>{
+                console.log(res)
+                alert("Workout added")
+                setError(null)
+        },(error)=>{
+            alert(error)
+        })
+        
+    }
 
     useEffect(() => {
 
@@ -102,11 +114,12 @@ const Blog = () => {
                     <ul>
                         {dispWorkouts.map(workouts => {
                             return <li key={workouts.name}>
-                                <button className="addBtn">+</button>
-                                <h3>Workout type</h3>{workouts.type}-
-                                <h3>Equipment required</h3>{workouts.equipment}
-                                <h3>Workout difficulty</h3>{workouts.difficulty}-
-                                <h3>instructions</h3><a>{workouts.instructions}</a>
+                                <button className="addBtn"onClick={()=>findData(workouts.name)}>+</button>
+                                <h2>Workout Name</h2><h3 value={name} >{workouts.name}</h3>
+                                <h2>Workout type</h2><h3 value={type} >{workouts.type}-</h3>
+                                <h2>Equipment required</h2><h3 value={equipment}>{workouts.equipment}</h3>
+                                <h2>Workout difficulty</h2><h3 value={difficulty} >{workouts.difficulty}-</h3>
+                                <h2>instructions</h2><h3 value={inst} >{workouts.instructions}</h3>
 
                             </li>
 

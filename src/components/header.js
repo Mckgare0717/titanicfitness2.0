@@ -40,7 +40,7 @@ const ProfileBtn = ()=>{
         return (
             <button className="profile-btn" onClick={()=>navigate("/profile")}>
             {user[0].toUpperCase()}
-            {/* {JSON.stringify(user)} */}
+           
             </button>
         )
     }

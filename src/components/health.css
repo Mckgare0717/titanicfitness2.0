@@ -11,6 +11,10 @@
     
 }
 
+.content-cont a:link{
+    color: purple;
+}
+
 .content-cont img{
     width: 200px;
     height: auto;
