@@ -35,14 +35,13 @@ const Profile = () => {
             access_token:token,
             excName:selectedData.exercise_name
         }
-        console.log(selectedData.exercise_name)
         console.log(delData)
 
-        axios.delete("http://localhost:8000/deleteWorkout",delData).then((res)=>
-        { console.log(res)
+        axios.delete("http://localhost:8000/deleteWorkout",delData).then((res)=>{
+            console.log(res)
             alert(res.data.message)
         },(error)=>{
-            alert(error.response.data.detail)
+            alert(JSON.stringify(error.response.data.detail))
         })
     }
 
@@ -82,7 +81,7 @@ const Profile = () => {
                                             <div className='workout-box'>
                                                 <div className='content'>
                                                     <h2>Workout Name</h2>
-                                                    <h3  >{workouts.exercise_name}</h3>
+                                                    <h3 value={excName} >{workouts.exercise_name}</h3>
                                                     <h2>Workout type</h2>
                                                     <h3>{workouts.exercise_type}</h3>
                                                     <h2>Equipment required</h2>

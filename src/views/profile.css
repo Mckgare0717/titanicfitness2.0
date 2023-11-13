@@ -45,24 +45,10 @@
     border-radius: 30px;
     height: 600px;
     overflow-y: auto;
-    /* 
     
-    padding: 50px;
-    width: 50%;
-    align-items: center;
-    margin-left: 20%;
-    flex-wrap: wrap;
-    border-radius: 30px;
-    overflow-y: scroll;
-    height: 600px; */
 }
 
-/* .wrkbut{
-    background-color: #FFA500;
-    margin-top: 30px;
-    margin-right: 8%;
-    border-radius: 20px;
-} */
+
 
 
 .displayWrk {
@@ -89,4 +75,16 @@
     color: yellow;
     border-radius: 30px;
     gap: 1px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.content h2{
+    text-decoration:underline;
 }
