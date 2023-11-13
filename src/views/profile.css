@@ -83,3 +83,10 @@
 .displayWrk ul{
     list-style-type: none;
 }
+
+.delbutton{
+    background-color: red;
+    color: yellow;
+    border-radius: 30px;
+    gap: 1px;
+}

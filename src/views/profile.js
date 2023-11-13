@@ -12,7 +12,8 @@ const Profile = () => {
     const { user } = useContext(AuthContext)
     const { token } = useContext(AuthContext)
     const [myWorkout, setMyWorkout] = useState([])
-    console.log(user)
+    const [excName,setexcName] = useState("")
+    
 
     const myWorkouts = () => {
         const postData = {
@@ -20,15 +21,29 @@ const Profile = () => {
         }
 
         axios.post("http://localhost:8000/myworkouts", postData).then((res) => {
-            console.log(res.data)
+            
             setMyWorkout(res.data)
         }, (error) => {
             alert(error)
         }
         )
+    }
 
+    const  delWorkout=(wrkName)=>{
+        const selectedData = myWorkout.find((workouts)=>workouts.exercise_name===wrkName)
+        const delData ={
+            access_token:token,
+            excName:selectedData.exercise_name
+        }
+        console.log(selectedData.exercise_name)
+        console.log(delData)
 
-
+        axios.delete("http://localhost:8000/deleteWorkout",delData).then((res)=>
+        { console.log(res)
+            alert(res.data.message)
+        },(error)=>{
+            alert(error.response.data.detail)
+        })
     }
 
     return (
@@ -57,7 +72,8 @@ const Profile = () => {
                 <div >
                     <ul>
                         {myWorkout.map(workouts => {
-                            return <li >
+                            return <li  key={workouts.exercise_name}>
+                            
                                 <Popup trigger=
                                     {<button> {workouts.exercise_name} </button>}
                                     modal nested>
@@ -86,7 +102,8 @@ const Profile = () => {
                                         )
                                     }
                                 </Popup>
-
+                                |
+                                 <button className="delbutton" onClick={()=>delWorkout(workouts.exercise_name)}>Delete Workout</button>
 
                             </li>
 
