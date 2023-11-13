@@ -52,7 +52,7 @@ const Profile = () => {
                 <progress id="biceps" max="100" value={progressBar}>80%</progress>
             </div>
             <div className="displayWrk">
-            <h1>Workouts</h1>
+                <h1>Workouts</h1>
                 <button onClick={myWorkouts} className="wrkbut">Get my Workout</button>
                 <div >
                     <ul>
