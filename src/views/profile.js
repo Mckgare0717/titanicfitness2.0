@@ -33,7 +33,7 @@ const Profile = () => {
         const selectedData = myWorkout.find((workouts)=>workouts.exercise_name===wrkName)
         const delData ={
             access_token:token,
-            excName:selectedData.exercise_name
+            exercise_name:selectedData.exercise_name
         }
         console.log(delData)
 
