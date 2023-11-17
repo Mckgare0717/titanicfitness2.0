@@ -22,7 +22,7 @@ const RegisterForm = ({ changeForm }) => {
             age,
         };
         
-        axios.post("http://10.50.40.158:8000/register", postData).then((res) => {
+        axios.post("http://localhost:8000/register", postData).then((res) => {
             setUser(res.data.display_name)
             setToken(res.data.access_token)
             localStorage.setItem("token", res.data.access_token)

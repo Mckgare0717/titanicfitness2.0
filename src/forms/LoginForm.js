@@ -22,7 +22,7 @@ const LoginForm = ({ changeForm }) => {
             password
         }
 
-        axios.post("http://10.50.40.158:8000/login", postData).then((res) => {
+        axios.post("http://localhost:8000/login", postData).then((res) => {
             console.log(res)
             
             console.log(res.data)

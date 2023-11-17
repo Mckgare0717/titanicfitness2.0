@@ -20,7 +20,7 @@ const Profile = () => {
             access_token: token
         }
 
-        axios.post("http://10.50.40.158:8000/myworkouts", postData).then((res) => {
+        axios.post("http://localhost:8000/myworkouts", {postData}).then((res) => {
             
             setMyWorkout(res.data)
         }, (error) => {
@@ -37,7 +37,7 @@ const Profile = () => {
         }
         console.log(delData)
 
-        axios.delete("http://10.50.40.158:8000/deleteWorkout",delData).then((res)=>{
+        axios.delete("http://localhost:8000/deleteWorkout",delData).then((res)=>{
             console.log(res)
             alert(res.data.message)
         },(error)=>{
