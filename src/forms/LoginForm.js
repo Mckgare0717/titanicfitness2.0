@@ -50,7 +50,7 @@ const LoginForm = ({ changeForm }) => {
             <h3>Enter Email</h3>
             <input type="text" placeholder="Email" value={email} required onChange={(e) => setEmail(e.target.value)} />
             <h3>Enter Password</h3>
-            <input type="text" placeholder="password" value={password} required onChange={(e) => setPassword(e.target.value)} />
+            <input type="password" placeholder="password" value={password} required onChange={(e) => setPassword(e.target.value)} />
             <button className="submitbtn">Submit</button>
         </form>
     )
