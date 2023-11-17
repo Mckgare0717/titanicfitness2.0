@@ -51,7 +51,7 @@ const Blog = () => {
             inst:selectedData.instructions
         }
         console.log(exercData)
-        axios.post("http://localhost:8000/workouts",exercData).then((res)=>{
+        axios.post("http://10.50.40.158:8000/workouts",exercData).then((res)=>{
                 console.log(res)
                 alert("Workout added")
                 setError(null)

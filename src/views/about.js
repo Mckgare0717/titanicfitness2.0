@@ -16,6 +16,7 @@ const About = ()=>{
             <h2>Contact Info:</h2>
             <h3>Email:<a href="#">info@titanicfit.org.uk</a></h3>
             <h3>Phone Number:<a>+44 7834739436</a></h3>
+            <h3>Location: Some where in London,XXX XXX</h3>
             <h2>You can also connect through our social media</h2>
             <div className="social-cont">
                 <a href="#"><img src={pic2} alt="Instagram"/></a>
