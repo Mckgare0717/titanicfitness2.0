@@ -33,13 +33,11 @@ const Profile = () => {
         const selectedData = myWorkout.find((workouts)=>workouts.exercise_name===wrkName)
         const delData ={
             access_token:token,
+            exercise_name:selectedData.exercise_name
         }
-
-        var exc_name = selectedData.exercise_name
         console.log(delData)
-        console.log(exc_name)
 
-        axios.delete(`http://localhost:8000/deleteWorkout/${exc_name}`,delData).then((res)=>{
+        axios.delete("http://localhost:8000/deleteWorkout",{body:delData}).then((res)=>{
             console.log(res)
             alert(res.data.message)
         },(error)=>{
