@@ -20,7 +20,7 @@ const Profile = () => {
             access_token: token
         }
 
-        axios.post("http://localhost:8000/myworkouts", {postData}).then((res) => {
+        axios.post("http://localhost:8000/myworkouts", postData).then((res) => {
             
             setMyWorkout(res.data)
         }, (error) => {
@@ -33,11 +33,13 @@ const Profile = () => {
         const selectedData = myWorkout.find((workouts)=>workouts.exercise_name===wrkName)
         const delData ={
             access_token:token,
-            exercise_name:selectedData.exercise_name
         }
-        console.log(delData)
 
-        axios.delete("http://localhost:8000/deleteWorkout",delData).then((res)=>{
+        var exc_name = selectedData.exercise_name
+        console.log(delData)
+        console.log(exc_name)
+
+        axios.delete(`http://localhost:8000/deleteWorkout/${exc_name}`,delData).then((res)=>{
             console.log(res)
             alert(res.data.message)
         },(error)=>{
