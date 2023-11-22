@@ -35,9 +35,10 @@ const Profile = () => {
             access_token:token,
             exercise_name:selectedData.exercise_name
         }
+    
         console.log(delData)
 
-        axios.delete("http://localhost:8000/deleteWorkout",{body:delData}).then((res)=>{
+        axios.delete("http://localhost:8000/deleteWorkout",{data:delData} ).then((res)=>{
             console.log(res)
             alert(res.data.message)
         },(error)=>{
